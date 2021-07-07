@@ -18,7 +18,7 @@ class CreateProducts extends Seeder
             'name' => 'Piña',
             'size' => '1pza',
             'category' => 1,
-            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/1.jpg',
+            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/1.png',
             'price' => 0.01,
         ]);
 
@@ -26,7 +26,7 @@ class CreateProducts extends Seeder
             'name' => 'Manzana',
             'size' => '1pza',
             'category' => 1,
-            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/2.jpg',
+            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/2.png',
             'price' => 0.02,
         ]);
 
@@ -34,7 +34,7 @@ class CreateProducts extends Seeder
             'name' => 'Sandía',
             'size' => '1pza',
             'category' => 1,
-            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/3.jpg',
+            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/3.png',
             'price' => 0.03,
         ]);
 
@@ -42,7 +42,7 @@ class CreateProducts extends Seeder
             'name' => 'Naranja',
             'size' => '1pza',
             'category' => 1,
-            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/4.jpg',
+            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/4.png',
             'price' => 0.04,
         ]);
 
@@ -50,7 +50,7 @@ class CreateProducts extends Seeder
             'name' => 'Huevo',
             'size' => '6pzas',
             'category' => 2,
-            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/5.jpg',
+            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/5.png',
             'price' => 0.05,
         ]);
 
@@ -58,7 +58,7 @@ class CreateProducts extends Seeder
             'name' => 'Leche',
             'size' => '1 botella',
             'category' => 2,
-            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/6.jpg',
+            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/6.png',
             'price' => 0.06,
         ]);
 
@@ -66,7 +66,7 @@ class CreateProducts extends Seeder
             'name' => 'Cafe',
             'size' => '1 bolsa',
             'category' => 3,
-            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/7.jpg',
+            'img' => 'https://guacamayo.s3.us-west-2.amazonaws.com/imagenes-productos/7.png',
             'price' => 0.07,
         ]);
     }

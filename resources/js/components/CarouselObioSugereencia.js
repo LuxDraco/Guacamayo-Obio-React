@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import ReactDOM from 'react-dom';
 import CarouselObio from "./CarouselObio";
+import axios from "axios";
+import {red} from "@material-ui/core/colors";
 
 function CarouselObioSugerencia()
 {
@@ -21,6 +23,15 @@ function CarouselObioSugerencia()
             'img': 'https://image.freepik.com/free-photo/close-up-box-with-vegetables-hands-mature-man_329181-4600.jpg'
         },
     ])
+
+    const [recomendaciones, setRecomendaciones] = useState(null);
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:5000/predicciones/1')
+            .then(res => {
+                console.log(res)
+            })
+    })
 
     return(
         <CarouselObio
