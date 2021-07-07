@@ -43,6 +43,64 @@
 <body>
 <div id="app">
 
+    <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="exampleModalLongTitle">Iniciar Sesión</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-start align-items-center w-100">
+                        <form id="formLogin" method="POST" action="{{ route('login') }}" class="w-100">
+                            @csrf
+
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn"
+                        style="background: #F58234; color: white;"
+                        onclick="document.getElementById('formLogin').submit()"
+                    >
+                        Iniciar Sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
         @csrf
     </form>
@@ -76,7 +134,7 @@
                 <div class="rounded-pill d-flex justify-content-around align-items-center px-5 py-1 h-100"
                      style="background: #F58234;">
                     @guest
-                        <button class="btn btn-link btn-link-custom">
+                        <button class="btn btn-link btn-link-custom" data-toggle="modal" data-target="#modalLogin">
                             Iniciar Sesión
                         </button>
                         <div class="h-100 bg-white mx-2" style="width: 2px"></div>

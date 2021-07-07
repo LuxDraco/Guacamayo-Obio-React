@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import ReactDOM from 'react-dom';
 import CarouselObio from "./CarouselObio";
+import axios from "axios";
+import {CircularProgress, Typography} from "@material-ui/core";
 
 function CarouselObioLoMasVendido()
 {
@@ -20,13 +22,38 @@ function CarouselObioLoMasVendido()
             'price': '99.90',
             'img': 'https://image.freepik.com/free-photo/close-up-box-with-vegetables-hands-mature-man_329181-4600.jpg'
         },
-    ])
+    ]);
 
-    return(
-        <CarouselObio
-            listImgsProp={imgs}
-        />
-    )
+    const [products, setProducts] = useState(null);
+    const [productsValid, setProductsValid] = useState(false);
+
+    useEffect(() => {
+        axios.get('/products')
+            .then(res => {
+                setProducts(JSON.parse(JSON.stringify(res.data)));
+                setProductsValid(true);
+            })
+            .catch(err => {
+                setProductsValid(false);
+            })
+    }, []);
+
+    if (productsValid) {
+        return(
+            <CarouselObio
+                listImgsProp={products}
+            />
+        )
+    } else {
+        return (
+            <div className="d-flex flex-column justify-content-center align-items-center w-100">
+                <CircularProgress />
+                <Typography variant="h4">
+                    Cargando datos, por favor espere...
+                </Typography>
+            </div>
+        )
+    }
 }
 
 export default CarouselObioLoMasVendido;
