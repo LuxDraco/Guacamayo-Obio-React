@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import ReactDOM from 'react-dom';
 import Carousel, { slidesToShowPlugin, autoplayPlugin  } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
-import {Paper, Typography} from "@material-ui/core";
+import {IconButton, Paper, Tooltip, Typography} from "@material-ui/core";
 import '../../css/carousel.css';
+import {Launch} from "@material-ui/icons";
 
 export default function CarouselObio(props)
 {
@@ -26,7 +27,7 @@ export default function CarouselObio(props)
                     {
                         resolve: autoplayPlugin,
                         options: {
-                            interval: 300000,
+                            interval: 3000,
                         }
                     }
                 ]}
@@ -56,6 +57,7 @@ export default function CarouselObio(props)
                             'centered',
                             'infinite',
                             'fastSwipe',
+                            'clickToChange',
                             {
                                 resolve: slidesToShowPlugin,
                                 options: {
@@ -75,6 +77,7 @@ export default function CarouselObio(props)
                             'centered',
                             'infinite',
                             'fastSwipe',
+                            'clickToChange',
                             {
                                 resolve: slidesToShowPlugin,
                                 options: {
@@ -84,7 +87,7 @@ export default function CarouselObio(props)
                             {
                                 resolve: autoplayPlugin,
                                 options: {
-                                    interval: 3000,
+                                    interval: 300000,
                                 }
                             }
                         ]
@@ -107,12 +110,36 @@ export default function CarouselObio(props)
                                         objectFit: "cover",
                                     }}
                                 />
-                                <Typography variant={"h5"} className="font-weight-bold">
-                                    {item['name']}
-                                </Typography>
-                                <Typography variant={"body1"}>
-                                    {'$ ' + item['price']}
-                                </Typography>
+
+                                <div
+                                    className="position-relative w-100 d-flex flex-column justify-content-center align-items-center"
+                                >
+                                    <Typography variant={"h5"} className="font-weight-bold">
+                                        {item['name']}
+                                    </Typography>
+
+                                    <Typography variant={"body1"}>
+                                        {'$ ' + item['price']}
+                                    </Typography>
+
+                                    <Tooltip title={'Abrir detalles'}>
+                                        <IconButton
+                                            className="position-absolute"
+                                            style={{
+                                                right: 0,
+                                                top: 0,
+                                                bottom: 0,
+                                            }}
+                                            onClick={() => {
+                                                window.open('/details/' + item['id'], '_self');
+                                            }}
+                                        >
+                                            <Launch />
+                                        </IconButton>
+                                    </Tooltip>
+                                </div>
+
+
                             </Paper>
                         )
                     })

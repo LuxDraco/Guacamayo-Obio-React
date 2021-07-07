@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,11 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/details/{product_id?}', [MainController::class, 'viewDetails'])->name('details');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('products', function () {
+Route::get('/products', function () {
     $productos =  \App\Models\Products::all();
 
     return response(json_encode($productos), 200);
