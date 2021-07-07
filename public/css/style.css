@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Baukasten";
+    src: url("fonts/HomepageBaukasten-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "AntonioC";
+    src: url("fonts/Antonio-Regular.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "AntonioC";
+    src: url("fonts/Antonio-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "AntonioC";
+    src: url("fonts/Antonio-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+.btn-link-custom {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.btn-link-custom:hover {
+    text-decoration: none;
+    color: #1b1e21;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.texto-verde-1 {
+    font-family: 'Baukasten', serif;
+    font-weight: bold;
+    font-size: 3.5vw;
+}
+
+.texto-verde-2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 2.0vw;
+}
+
+.texto-que-es {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1.5vw;
+}
+
+.pantalla-inicio-2 {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .texto-verde-1 {
+        font-size: 40px;
+    }
+
+    .texto-verde-2 {
+        font-size: 20px;
+    }
+
+    .texto-que-es {
+        font-size: 20px;
+    }
+
+    .toolbar-inicio {
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .pantalla-inicio-1 {
+        display: none;
+    }
+
+    .pantalla-inicio-2 {
+        display: flex;
+    }
+}
